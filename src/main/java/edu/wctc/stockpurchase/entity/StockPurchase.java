@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -14,6 +15,14 @@ public class StockPurchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="purchase_id")
     private int id;
+    @Column(name="symbol")
+    private String symbol;
+    @Column(name="price_per_share")
+    private double pricePerShare;
+    @Column(name="shares")
+    private double shares;
+    @Column(name="purchase_date")
+    private LocalDateTime purchaseDate;
 
     /*
     Complete this class by adding the rest of the fields
